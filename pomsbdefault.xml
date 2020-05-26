@@ -14,7 +14,9 @@
 	<version>0.0.1</version>
 	<name>SDGDemoBoot</name>
 	<description>SDG Legacy Java Convertion demo</description>
+
 	<packaging>war</packaging>
+
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -30,11 +32,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
@@ -59,18 +63,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <outputDirectory>target</outputDirectory>
-              		  <warName>ROOT</warName>
-                </configuration>
-            </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<outputDirectory>target</outputDirectory>
+					<warName>ROOT</warName>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 	<repositories>
 		<repository>
 			<id>spring-releases</id>
