@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.*;
 public class SDGDemoController {
 	@RequestMapping("/")
 	public String index() {
-		
 		return "Greetings from Spring Boot!";
 	}
-	@GetMapping("/checktitle")
+	@GetMapping("/v1/api/sdg/demo/checktitle")
 	public String getEmployeeTitle(@RequestParam(name = "name") String name) {
 		Employee emp = new Employee();
         String title = emp.searchTitleByName(name);
