@@ -8,7 +8,9 @@ class MysqlCon {
 	public MysqlCon() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "root");
+			String host = System.getenv("MYSQL_SERVICE_HOST");
+			String port = System.getenv("MYSQL_SERVICE_PORT_MYSQL");
+			con = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/employee", "root", "root");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
