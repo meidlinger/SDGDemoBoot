@@ -8,7 +8,7 @@ public class SDGDemoController {
 	public String index() {
 		return "Greetings from Spring Boot!";
 	}
-	@GetMapping("/v1/api/sdg/demo/checktitle")
+	@GetMapping("/v1/api/sdg/demo/person/checktitle")
 	public String getEmployeeTitle(@RequestParam(name = "name") String name) {
 		Employee emp = new Employee();
         String title = emp.searchTitleByName(name);
