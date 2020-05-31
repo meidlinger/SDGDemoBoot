@@ -1,6 +1,7 @@
 package sdg.demo.java;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 class MysqlCon {
 	Connection con;
@@ -27,6 +28,20 @@ class MysqlCon {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
+		}
+	}
+	public String[] getAllTitles() {
+		ArrayList<String> titles = new ArrayList<String>();
+		try {
+			preparedStatement = con.prepareStatement("select title from emp");       
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				titles.add(rs.getString(1));
+			}
+			return (String[]) titles.toArray();
+		} catch (Exception e) {
+			titles.add("error:" + e.getMessage());
+			return (String[]) titles.toArray();
 		}
 	}
 }

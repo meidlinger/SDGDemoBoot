@@ -4,6 +4,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SDGDemoController {
+	MysqlCon myconn;
+	public SDGDemoController() {
+		myconn = new MysqlCon();
+	}
 	@RequestMapping("/")
 	public String index() {
 		return "Greetings from Spring Boot!";
@@ -14,5 +18,11 @@ public class SDGDemoController {
         String title = emp.searchTitleByName(name);
 		return title;
 	}
+	@GetMapping("/v1/api/sdg/demo/person/alltitles")
+	public String[] getEmployeeTitle() {
+		
+		return myconn.getAllTitles();
+	}
 
+	
 }
