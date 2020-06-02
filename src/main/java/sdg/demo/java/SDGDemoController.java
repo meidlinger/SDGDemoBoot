@@ -20,8 +20,12 @@ public class SDGDemoController {
 	}
 	@GetMapping("/v1/api/sdg/demo/person/alltitles")
 	public String[] getEmployeeTitle() {
-		
-		return myconn.getAllTitles();
+		try {
+			return myconn.getAllTitles();
+		} catch (Exception e) {
+			String[] titles  = {"CEO", "Admin","Consultant"};
+			return titles;
+		}
 	}
 
 	
