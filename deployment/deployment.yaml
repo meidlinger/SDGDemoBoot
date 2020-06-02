@@ -46,7 +46,7 @@ spec:
       serviceAccountName: sdgdemo-titles
       containers:
       - name: titles
-        image: maistra/examples-bookinfo-ratings-v1:1.1.0
+        image: zhejingl/titles:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
