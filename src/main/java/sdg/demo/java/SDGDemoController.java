@@ -10,7 +10,7 @@ public class SDGDemoController {
 	}
 	@RequestMapping("/")
 	public String index() {
-		return "Greetings from Spring Boot! - built through pipeline, and triggered through webhook!";
+		return "Greetings from Spring Boot! - built through pipeline, and triggered through webhook! take 2";
 	}
 	@GetMapping("/v1/api/sdg/demo/person/checktitle")
 	public String getEmployeeTitle(@RequestParam(name = "name") String name) {
