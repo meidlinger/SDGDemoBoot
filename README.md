@@ -1,1 +1,1 @@
-test new dep
+test fixed image path
