@@ -1,5 +1,34 @@
 # sdgdemoboot
 
+## Service Mesh Integration
+
+### Add Application Label
+
+```
+template:
+  metadata:
+    labels:
+      app: springboot-demo
+```
+
+```
+oc patch deployment.apps/springboot-demo -p '{"spec":{"template":{"metadata":{"labels":{"app": "springboot-demo" }}}}}'
+```
+
+
+### Add Sidecar
+
+```
+template:
+  metadata:
+    annotations:
+      sidecar.istio.io/inject: "true"
+```
+
+```
+oc patch deployment.apps/springboot-demo -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject": "true" }}}}}'
+```
+
 ### Loading Service Mesh Resources
 
 ```

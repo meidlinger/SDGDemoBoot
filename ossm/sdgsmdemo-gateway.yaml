@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: sdgsmdemo-gateway
+  name: employee-gateway
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -16,18 +16,18 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: bookinfo
+  name: employee
 spec:
   hosts:
   - "*"
   gateways:
-  - sdgsmdemo-gateway
+  - employee-gateway
   http:
   - match:
     - uri:
         prefix: /v1/api/sdg
     route:
     - destination:
-        host: candidate
+        host: springboot-demo
         port:
           number: 9080
