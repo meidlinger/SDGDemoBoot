@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "*"
+    - "employee.apps.cluster-3aa4.sandbox1722.opentlc.com"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: employee
 spec:
   hosts:
-  - "*"
+  - "employee.apps.cluster-3aa4.sandbox1722.opentlc.com"
   gateways:
   - employee-gateway
   http:
@@ -30,4 +30,4 @@ spec:
     - destination:
         host: springboot-demo
         port:
-          number: 9080
+          number: 8080
