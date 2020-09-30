@@ -13,6 +13,7 @@ template:
 
 ```
 oc patch deployment.apps/springboot-demo -p '{"spec":{"template":{"metadata":{"labels":{"app": "springboot-demo" }}}}}'
+oc patch deploymentconfig.apps.openshift.io/mysql -p '{"spec":{"template":{"metadata":{"labels":{"app": "mysql" }}}}}'
 ```
 
 
@@ -27,6 +28,7 @@ template:
 
 ```
 oc patch deployment.apps/springboot-demo -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject": "true" }}}}}'
+oc patch deploymentconfig.apps.openshift.io/mysql -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject": "true" }}}}}'
 ```
 
 ### Loading Service Mesh Resources
